@@ -1,0 +1,11 @@
+project: savantenvs/openfhe-development
+target: fuzz_params
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_params/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_params
+    libfuzzer: true
+    timeout: 60
+    env:
+      MFUZZ_COMPAT_LEVEL: '2'
